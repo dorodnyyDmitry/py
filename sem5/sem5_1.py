@@ -4,10 +4,15 @@ import matplotlib
 import pandas as pd
 
 R=1.496000e+08
+L2=1.010032e+00
 
 data = np.loadtxt('traj.txt', dtype = float)
 
+data
+
 df = pd.DataFrame(data, columns = ['x', 'y', 'z', 'vx', 'vy', 'vz', 't'])
+
+df['x'] -= L2
 
 print(df)
 
@@ -48,6 +53,6 @@ ax[1].scatter(xz[['x']]*R, xz[['z']]*R, zorder = 100, color = 'r') #(xz[['x', 'z
 ax[1].plot(data[:, 0]*R, data[:, 2]*R, color = 'b')
 
 ax[2].plot(data[:, 1]*R, data[:, 2]*R, color = 'b')
-plt.show()
+plt.savefig('alldata')
 
 print('x: ', np.amax(data[:,0])*R - np.amin(data[:,0])*R,'y: ', np.amax(data[:,1])*R - np.amin(data[:,1])*R,'z: ', np.amax(data[:,2])*R - np.amin(data[:,2])*R)
