@@ -1,0 +1,4 @@
+2019-11-24 17:56:21.756655: In my_func1 (20, 'a') caught Wrong value 
+2019-11-24 17:56:21.756655: In my_func2 (13, 0) caught division by zero 
+2019-11-24 17:56:21.757644: In my_func3 (0, 0) caught Timed out 
+2019-11-24 17:56:21.758630: Finished my_func4 (1, 4) without errors
